@@ -557,8 +557,10 @@ body {
 .nav {
   background: #ccc;
   background: linear-gradient(-135deg, transparent 20px, #ccc 0) top right,
-  linear-gradient(-45deg, transparent 20px, #ccc 0) bottom right;
-  background-size: 100% 51%;
+  linear-gradient(135deg, transparent 20px, #ccc 0) top left,
+  linear-gradient(-45deg, transparent 20px, #ccc 0) bottom right,
+  linear-gradient(45deg, transparent 20px, #ccc 0) bottom left;
+  background-size: 50% 51%;
   background-repeat: no-repeat;
   /* border-style: solid;
   border-color: #ccc;
