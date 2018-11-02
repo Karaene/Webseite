@@ -1,0 +1,552 @@
+/* schatzy
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.breadcrumb {
+  background: #eee;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f5f5f5 #e5e5e5 #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+  overflow: hidden;
+  width: 100%;
+}
+ul.breadcrumb li {
+  float: left;
+}
+ul.breadcrumb li:first-child a{
+  padding-left: 1em;
+  border-radius: 5px 0 0 5px;
+}
+ul.breadcrumb a:after+a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid;
+  right: -1em;
+}
+ul.breadcrumb li a {
+  padding: .7em 1em .7em 2em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: #ddd;
+  background-image: linear-gradient(to right, #f5f5f5, #ddd)
+}
+ul.breadcrumb li a:hover {
+    background: #fff;
+}
+ul.breadcrumb a::after{ 
+  z-index: 2;
+  border-left-color: #ddd;
+}
+
+ul.breadcrumb a::before{
+  border-left-color: #ccc;
+  right: -1.1em;
+  z-index: 1; 
+}
+
+ul.breadcrumb.current+ul.breadcrumb.current:hover{
+  font-weight: bold;
+  background: none;
+}
+
+ul.breadcrumb.current::after+ul.breadcrumb.current::before{
+  content: normal;
+}
+
+
+/*
+ul {
+  list-style: none;
+  margin: 0 0 0 1.775em;
+  padding: 0;
+}
+
+ul::before,
+ul::after {
+  content: '';
+  display: table;
+}
+
+ul::after {
+  clear: both;
+}
+
+li {
+  float: left;
+  overflow: hidden;
+  margin-left: -1.775em;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  background: green;
+  padding-left: 2em;
+  margin-right: 1.775em;
+}
+
+li a::after {
+  content: '';
+  position: absolute;
+  right: -1.25em;
+  top: 0.063em;
+  width: 2.5em;
+  height: 2.5em;
+  background: green;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-color: #fff #fff transparent transparent;
+  border-width: 0.125em;
+  border-style: solid;
+  z-index: 10;
+}
+
+li:first-child a {
+  padding-left: 0.4em;
+}
+
+li:last-child a {
+  padding-right: 0.8em;
+  margin: 0;
+}
+
+li:last-child a::after {
+  display: none;
+}
+
+li:hover a,
+li:hover a::after {
+  background: forestgreen;
+}
+
+li a:focus,
+li a:focus::after,
+li a:active,
+li a:active::after {
+  background: limegreen;
+}
+
+li.current a,
+li.current a::after {
+  background: darkgreen;
+}
+
+li.current~li a,
+li.current~li a::after {
+  background: lightgray;
+}
+
+li.current~li:hover a,
+li.current~li:hover a::after {
+  background: darkgray;
+}
+
+li.current~li a:focus,
+li.current~li a:focus::after,
+li.current~li a:active,
+li.current~li a:active::after {
+  background: gray;
+}
+
+span {
+  position: relative;
+  z-index: 100;
+  display: block;
+  padding: 0.8em 0 0.8em 0.4em;
+}
+*/
+
+.header{
+	width: 100%;
+	height: 300px;
+	overflow: hidden
+}
+.sao-frame{
+	background: url(img/76097.png) no-repeat center;
+	width: 100%;
+	height: 100%
+}
+
+
+.beforeNav{
+	border-style: none none solid none;
+	border-color: gray;
+	float: left;
+	height: 35px;
+	display: inline-block;
+	width: 15%
+}
+
+.afterNav{
+	border-style: none none solid none;
+	border-color: gray;
+	float: right;
+	height: 35px;
+	display: inline-block;
+	width: 30%
+}
+
+.nav{
+	display: inline-block;
+	width: 55%;
+	height: 30px
+}
+
+
+
+/* Grüne Navi
+ul {
+  list-style: none;
+  margin: 0 0 0 1.775em;
+  padding: 0;
+}
+
+ul::before,
+ul::after {
+  content: '';
+  display: table;
+}
+
+ul::after {
+  clear: both;
+}
+
+li {
+  float: left;
+  overflow: hidden;
+  margin-left: -1.775em;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  background: green;
+  padding-left: 2em;
+  margin-right: 1.775em;
+}
+
+li a::after {
+  content: '';
+  position: absolute;
+  right: -1.25em;
+  top: 0.063em;
+  width: 2.5em;
+  height: 2.5em;
+  background: green;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-color: #fff #fff transparent transparent;
+  border-width: 0.125em;
+  border-style: solid;
+  z-index: 10;
+}
+
+li:first-child a {
+  padding-left: 0.4em;
+}
+
+li:last-child a {
+  padding-right: 0.8em;
+  margin: 0;
+}
+
+li:last-child a::after {
+  display: none;
+}
+
+li:hover a,
+li:hover a::after {
+  background: forestgreen;
+}
+
+li a:focus,
+li a:focus::after,
+li a:active,
+li a:active::after {
+  background: limegreen;
+}
+
+li.current a,
+li.current a::after {
+  background: darkgreen;
+}
+
+li.current~li a,
+li.current~li a::after {
+  background: lightgray;
+}
+
+li.current~li:hover a,
+li.current~li:hover a::after {
+  background: darkgray;
+}
+
+li.current~li a:focus,
+li.current~li a:focus::after,
+li.current~li a:active,
+li.current~li a:active::after {
+  background: gray;
+}
+
+span {
+  position: relative;
+  z-index: 100;
+  display: block;
+  padding: 0.8em 0 0.8em 0.4em;
+}
+*/
+
+body {
+	background-color: #575657;
+}
+
+p {
+	color: white;
+}	
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#navigation-one{
+  background: linear-gradient(10deg, #fff ,#ffd);
+  border-width: 2px;
+  border-style: solid;
+  /* border-color: #f5f5f5 #e5e5e5 #ccc; */
+  border-color: #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+  overflow: hidden;
+  width: 50%;
+}
+
+#navigation-one li{
+  float: left;
+}
+
+#navigation-one a{
+  padding: .7em 1em .7em 2em;
+  float: left;
+  text-decoration: none;
+  color: #444; /* Text Color */
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: #ddd;
+  background-image: linear-gradient(45deg, #ccc, #ddd);  
+}
+
+#navigation-one li:first-child a{
+  padding-left: 1em;
+  border-radius: 5px 0 0 5px;
+}
+
+#navigation-one a:hover{
+  background: #fff;
+}
+
+#navigation-one a::after,
+#navigation-one a::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;   
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid;
+  right: -1em;
+}
+
+#navigation-one a::after{ 
+  z-index: 2;
+  border-left-color: #ddd;  
+}
+
+#navigation-one a::before{
+  border-left-color: #ccc;  
+  right: -1.1em;
+  z-index: 1; 
+}
+
+#navigation-one a:hover::after{
+  border-left-color: #fff;
+}
+
+#navigation-one .current,
+#navigation-one .current:hover{
+  font-weight: bold;
+  background: none;
+}
+
+#navigation-one .current::after,
+#navigation-one .current::before{
+  content: normal;  
+}
+
+/* Beispiel
+html, body {
+}
+
+body {
+}
+
+.container {
+}
+
+.header {
+  background: url(img/HeaderSample2.png) no-repeat center center; 
+  background-size: cover;
+  height: 800px;
+  text-align: center; 
+}
+
+.header .container {
+  position: relative;
+  top: 200px;
+}
+
+.header h1 {
+  color: #fff;
+  line-height: 100px; 
+  font-size: 80px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  text-transform: uppercase; 
+}
+
+@media (min-width:850px) {
+  .header h1 {
+    font-size: 120px;
+  }
+}
+
+.header p {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin-bottom: 40px;
+  margin-top: 0;
+  text-transform: uppercase; 
+}
+
+.btn {
+  color: #fff;
+  background: #000;
+  padding: 10px 40px;
+  text-decoration: none; 
+  transition: background .5s; 
+}
+
+.nav { 
+  background: #000;
+  height: 80px; 
+  width: 100%;
+}
+
+.nav ul {
+  height: 80px;
+  list-style: none;
+  margin: 0 auto; 
+  padding: 0;
+}
+
+.nav ul li {
+  color: #fff;
+  display: inline-block; 
+  height: 80px;
+  line-height: 80px; 
+  list-style: none;
+  padding: 0 10px;
+  transition: background .5s; 
+}
+
+.btn:hover, .nav ul li:hover {
+  background: #117bff;
+  cursor: pointer; 
+  transition: background .5s;  
+}
+
+.main .container {
+  margin: 80px auto;
+}
+
+.main img {
+  float: left;
+  margin: 50px 80px 50px 0;
+}
+
+.jumbotron {
+  background: url(http://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/jumbotron_bg.jpg) center center;
+  background-size: cover;
+  height: 600px; 
+}
+
+.jumbotron .container {
+  position: relative;
+  top: 220px;
+}
+
+.jumbotron h2 {
+  color: #fff;
+  text-align: right; 
+}
+
+.jumbotron p {
+  color: #fff; 
+  text-align: right; 
+}
+
+.jumbotron .btn {
+  margin: 10px 0 0;
+  float: right; 
+}
+
+.footer { 
+  background: #000;
+  height: 80px; 
+  padding-bottom: 50px;
+}
+
+.footer p { 
+  color: #fff;
+  font-size: 14px;  
+  height: 80px; 
+  line-height: 80px;
+  margin: 0;  
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 50px;
+    line-height: 64px;
+  }
+
+  .main, .jumbotron {
+    padding: 0 30px;
+  }
+
+  .main img {
+    width: 100%;
+  }
+}
+*/
